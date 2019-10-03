@@ -38,8 +38,6 @@ def Set_Data(request):
         typeconcession = request.GET.get('typeconcession', '')
         gender = request.GET.get('gender', '')
         chooseDoc = request.GET.get('chooseDoc', '')
-        # UpperCase на группу
-        group.upper()
 
         # урезание строки
         gender = re.sub(" +", ' ', gender.strip())
@@ -52,7 +50,7 @@ def Set_Data(request):
         chooseDoc = re.sub(" +", ' ', chooseDoc.strip())
 
         # UpperCase на группу
-        group.upper()
+        group = group.upper()
 
         respons = CreateWord(gender, group, surname, name, lname, number, typeconcession, chooseDoc)
         if respons != "Error Gender" and respons != "Error NoData" and respons != "Error Len":
