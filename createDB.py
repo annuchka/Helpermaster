@@ -21,12 +21,13 @@ def First_Init():
                         number TEXT NULL,
                         typeconcession TEXT NOT NULL,
                         gender TEXT NULL,
-                        Confirm boolean );""")
+                        confirm boolean );""")
 
-    StringSQLtext = "INSERT INTO comments ( surname, name, lname, group2, number, typeconcession, gender ) VALUES ( '"+ 'Фамилия' +"', '"+ 'Имя' +"', '"+'Отчетство'+"', '"+'Группа'+"', '"+'Моб. телефон'+"', '"+'Причина'+"', '"+'Пол'+"' ); "
+    StringSQLtext = "INSERT INTO comments ( surname, name, lname, group2, number, typeconcession, gender, confirm ) VALUES ( '"+ 'Фамилия' +"', '"+ 'Имя' +"', '"+'Отчетство'+"', '"+'Группа'+"', '"+'Моб. телефон'+"', '"+'Причина'+"', '"+'Пол'+"', '"+'Есть оригинал'+"' ); "
     cursor.execute(StringSQLtext)
     conn.commit()
     conn.close()
+    print('Successfully create DB!')
     return
 
 First_Init()
