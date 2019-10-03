@@ -18,7 +18,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+TEMPLATES_ROOT = BASE_DIR + '/templates'
+TEMPLATES_URL = '/templates/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -125,6 +126,3 @@ USE_TZ = True
 
 STATIC_URL = '/static'
 STATIC_ROOT = BASE_DIR + '/static'
-
-TEMPLATES_ROOT = BASE_DIR + '/templates'
-TEMPLATES_URL = '/templates/'
