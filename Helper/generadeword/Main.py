@@ -66,7 +66,7 @@ def CreateWord(gender, group, surname, name, lastname, number, typeconcession, c
                'name': Genitive_Name(name, lastname),
                'lastname': Genitive_MiddleName(lastname),
                'number': number,
-               'typeconcession': ConcessionMass[int(typeconcession)],
+               'typeconcession': 'test'],
                'director': director}
 
     doc.render(context)
