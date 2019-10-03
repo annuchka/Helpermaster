@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 GenderMass = ["женский", "мужской"]
 adr = BASE_DIR + "/Helper/db_access/db_s.db"
 # ТОЛЬКО ДЛЯ REG.RU
-#adr.replace('\\','/')
+adr.replace('\\','/')
 
 # Функция создания базы данных, запускать только один раз при ее создании
 def First_Init():
