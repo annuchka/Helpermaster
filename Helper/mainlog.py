@@ -86,7 +86,7 @@ def Index(request):
 
 def Webstat(request):
     copytree('/var/www/u0825496/data/www/ruthelp.ru/webstat/', '/var/www/u0825496/data/www/ruthelp.ru/Helper/templates/webstat')
-    return render(request, '/webstat/index.html')
+    return render(request, 'webstat/index.html')
 
 # Перенапрвление на главную страницу
 def Any_Page(request):
