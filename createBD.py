@@ -9,6 +9,7 @@ from xlsxwriter import Workbook
 def First_Init():
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
     adr = BASE_DIR + "/Helper/db_access/db_s.db"
+    print(adr)
     conn = sqlite3.connect(adr)
     cursor = conn.cursor()
     # Создание таблицы
