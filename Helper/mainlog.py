@@ -95,10 +95,10 @@ def Page_Return_Data(request, path):
 # Бэкап
 def Backup(request):
     adr = Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db"
-    #time = datetime.datetime.today().strftime("%Y-%m-%d-%H.%M.%S")
-    #adrout = Helper.settings.BASE_DIR + "/Helper/Helper/db_access/backup/db_s-"+ time + ".db"
-    adrout = Helper.settings.BASE_DIR + "/Helper/db_access/backup/db_s.db"
+    time = datetime.datetime.today().strftime("%Y-%m-%d-%H.%M.%S")
+    adrout = Helper.settings.BASE_DIR + "/Helper/Helper/db_access/backup/db_s-"+ time + ".db"
     adr.replace('\\','/')
     adrout.replace('\\','/')
+    
     copyfile(adr, adrout)
     return redirect("/index")
