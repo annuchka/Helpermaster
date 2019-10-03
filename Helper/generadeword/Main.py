@@ -56,6 +56,7 @@ def CreateWord(gender, group, surname, name, lastname, number, typeconcession, c
     if int(typeconcession) < 0 or int(typeconcession) > 10:
         return "Error typeConcession"
 
+    tmpTC = ConcessionMass[ int(typeconcession) ]
     #typeconcession = ConcessionMass[int(typeconcession)]
 
     director = chooseDirector(group)
@@ -66,7 +67,7 @@ def CreateWord(gender, group, surname, name, lastname, number, typeconcession, c
                'name': Genitive_Name(name, lastname),
                'lastname': Genitive_MiddleName(lastname),
                'number': number,
-               'typeconcession': 'test'],
+               'typeconcession': tmpTC],
                'director': director}
 
     doc.render(context)
