@@ -38,6 +38,9 @@ def Set_Data(request):
         typeconcession = request.GET.get('typeconcession', '')
         gender = request.GET.get('gender', '')
         chooseDoc = request.GET.get('chooseDoc', '')
+        # UpperCase на группу
+        group.upper()
+
         # урезание строки
         gender = re.sub(" +", ' ', gender.strip())
         group = re.sub(" +", ' ', group.strip())
@@ -51,10 +54,6 @@ def Set_Data(request):
         # UpperCase на группу
         group.upper()
 
-        #if not re.match(r"8\d\d\d\d\d\d\d\d\d\d", number):
-            #return HttpResponse("NоNumber")
-        #if not re.match(r"\w\w\w-\d\d\d", group):
-            #return HttpResponse("NоGroup")
         respons = CreateWord(gender, group, surname, name, lname, number, typeconcession, chooseDoc)
         if respons != "Error Gender" and respons != "Error NoData" and respons != "Error Len":
             t = threading.Thread(target=Insert_Data, args=(gender, group, surname, name, lname, number, typeconcession, chooseDoc))
