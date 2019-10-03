@@ -1,4 +1,4 @@
-import setting.py
+from Helper.mainlog import *
 
 print(BASE_DIR)
 print(STATIC_URL)
