@@ -42,7 +42,7 @@ def Get_Data():
     worksheet = workbook.add_worksheet()
     #c.execute("select * from comments")
 
-    c.execute("select name from comments")
+    #c.execute("select name from comments")
     mysel = c.execute("select name from comments")
     for i, row in enumerate(mysel):
         for j, value in enumerate(row):
