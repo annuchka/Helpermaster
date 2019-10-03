@@ -1,6 +1,7 @@
 import mimetypes
 import os
 import sqlite3
+import Helper.settings
 
 from django.http import HttpResponse
 from xlsxwriter import Workbook
@@ -24,4 +25,6 @@ def First_Init():
     conn.close()
     return
 
-First_Init()
+#First_Init()
+print ( Helper.settings.BASE_DIR )
+print ( Helper.settings.BASE_DIR +  "/Helper/db_access/db_s.db")
