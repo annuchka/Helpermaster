@@ -29,7 +29,7 @@ def Insert_Data(gender, group, surname, name, lastname, number, typeconcession, 
     if mysel != []:
         return
     # добавление записи
-    StringSQLtext = "INSERT INTO comments ( surname, name, lname, group2, number, typeconcession, gender ) VALUES ( '"+surname+"', '"+name+"', '"+lastname+"', '"+group+"', '"+number+"', '"+typeconcession+"', '"+gender+"' ); "
+    StringSQLtext = "INSERT INTO comments ( surname, name, lname, group2, number, typeconcession, gender, confirm ) VALUES ( '"+surname+"', '"+name+"', '"+lastname+"', '"+group+"', '"+number+"', '"+typeconcession+"', '"+gender+"', '"+'Нет'+"' ); "
     cursor.execute(StringSQLtext)
     conn.commit()
     conn.close()
@@ -47,7 +47,7 @@ def Get_Data():
     mysel = c.execute("select * from comments")
     for i, row in enumerate(mysel):
         for j, value in enumerate(row):
-            worksheet.write(i, j+1, row[j])
+            worksheet.write(i, j-1, row[j])
     workbook.close()
     conn.close()
     File_Path = os.path.abspath('db_accel.xlsx')
