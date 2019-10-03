@@ -92,5 +92,5 @@ def Page_Return_Data(request, path):
 # Бэкап
 def Backup(request):
     time = datetime.datetime.today().strftime("%Y-%m-%d-%H.%M.%S")
-    copyfile(os.path.abspath("Helper/Helper/db_access/db_s.db"), os.path.abspath("Helper/Helper/db_access/backup/db_s-"+ time + ".db") )
+    copyfile(os.path.abspath("/Helper/Helper/db_access/db_s.db"), os.path.abspath("/Helper/Helper/db_access/backup/db_s-"+ time + ".db") )
     return redirect("/index")
