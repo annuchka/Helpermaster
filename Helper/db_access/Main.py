@@ -1,36 +1,17 @@
 import mimetypes
 import os
 import sqlite3
-
+import Helper.settings
 
 from django.http import HttpResponse
 from xlsxwriter import Workbook
 
 GenderMass = ["женский", "мужской"]
-
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-adr = BASE_DIR + "/Helper/db_access/db_s.db"
-
+adr = Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db"
 # ТОЛЬКО ДЛЯ REG.RU
 #adr.replace('\\','/')
 
-# Функция создания базы данных, запускать только один раз при ее создании
-def First_Init():
-    conn = sqlite3.connect(adr)
-    cursor = conn.cursor()
-    # Создание таблицы
-    cursor.execute("""  CREATE TABLE comments (
-                        post_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                        surname TEXT NOT NULL,
-                        name TEXT NOT NULL,
-                        lname TEXT NOT NULL,
-                        group2 TEXT NOT NULL,
-                        number TEXT NULL,
-                        typeconcession TEXT NOT NULL,
-                        gender TEXT NULL);""")
-    conn.commit()
-    conn.close()
-    return
+
 
 # Функция добавления данных в БД, если такой записи нету
 def Insert_Data(gender, group, surname, name, lastname, number, typeconcession, chooseDoc):
@@ -76,6 +57,3 @@ def Get_Data():
     # Чистка временнойго файла
     os.remove(File_Path)
     return response
-
-if __name__ == '__main__':
-    First_Init()
