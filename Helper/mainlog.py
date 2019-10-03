@@ -48,6 +48,9 @@ def Set_Data(request):
         typeconcession = re.sub(" +", ' ', typeconcession.strip())
         chooseDoc = re.sub(" +", ' ', chooseDoc.strip())
 
+        # UpperCase на группу
+        group.upper()
+
         #if not re.match(r"8\d\d\d\d\d\d\d\d\d\d", number):
             #return HttpResponse("NоNumber")
         #if not re.match(r"\w\w\w-\d\d\d", group):

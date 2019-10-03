@@ -61,7 +61,7 @@ def CreateWord(gender, group, surname, name, lastname, number, typeconcession, c
     director = chooseDirector(group)
 
     context = {'gender': gender,
-               'group': group.upper(),
+               'group': group,
                'surname': Genitive_SecondName(surname, lastname),
                'name': Genitive_Name(name, lastname),
                'lastname': Genitive_MiddleName(lastname),
