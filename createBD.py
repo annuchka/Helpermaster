@@ -22,6 +22,9 @@ def First_Init():
                         typeconcession TEXT NOT NULL,
                         gender TEXT NULL,
                         Confirm boolean );""")
+
+    StringSQLtext = "INSERT INTO comments ( surname, name, lname, group2, number, typeconcession, gender ) VALUES ( '"+ 'Фамилия' +"', '"+ 'Имя' +"', '"+'Отчетство'+"', '"+'Группа'+"', '"+'Моб. телефон'+"', '"+'Причина'+"', '"+'Пол'+"' ); "
+    cursor.execute(StringSQLtext)
     conn.commit()
     conn.close()
     return
