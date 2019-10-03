@@ -19,11 +19,11 @@ import os
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-TEMPLATES_URL = '/templates/'
+TEMPLATES_URL = '/Helper/templates/'
 TEMPLATES_ROOT = BASE_DIR + '/templates'
 
 
-STATIC_URL = '/static'
+STATIC_URL = '/Helper/static'
 STATIC_ROOT = BASE_DIR + '/static'
 
 # ТОЛЬКО ДЛЯ REG.RU
