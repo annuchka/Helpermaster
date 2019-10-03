@@ -3,7 +3,7 @@ import os
 import sqlite3
 
 
-from Helper import settings
+import Helper.settings
 from django.http import HttpResponse
 from xlsxwriter import Workbook
 
