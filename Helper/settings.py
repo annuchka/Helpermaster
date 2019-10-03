@@ -22,9 +22,7 @@ TEMPLATES_ROOT = BASE_DIR + '/templates'
 TEMPLATES_URL = '/templates/'
 
 # ТОЛЬКО ДЛЯ REG.RU
-#BASE_DIR.replace('\\','/')
 TEMPLATES_ROOT.replace('\\','/')
-TEMPLATES_URL.replace('\\','/')
 
 
 # Quick-start development settings - unsuitable for production
