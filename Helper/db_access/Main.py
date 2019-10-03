@@ -17,8 +17,9 @@ adr = Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db"
 
 # Функция добавления данных в БД, если такой записи нету
 def Insert_Data(gender, group, surname, name, lastname, number, typeconcession, chooseDoc):
-
-    typeconcession = ConcessionMass[int(typeconcession)]
+    if chooseDoc == '2':
+        typeconcession = 10
+    typeconcession = ConcessionMass[ int(typeconcession) ]
     gender = GenderMass[int(gender)]
     conn = sqlite3.connect(adr)
     cursor = conn.cursor()
