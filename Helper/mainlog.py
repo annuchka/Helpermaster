@@ -3,6 +3,7 @@ import threading
 import os
 import datetime
 import Helper.settings
+import sys, shutil
 
 from django.contrib.sites import requests
 from django.http import HttpResponse, HttpResponseRedirect
@@ -59,13 +60,33 @@ def Set_Data(request):
             return respons
     return HttpResponse(respons)
 
+def copytree(src, dst, symlinks=0):
+  print ("copy tree " + src)
+  names = os.listdir(src)
+  if not os.path.exists(dst):
+    os.mkdir(dst)
+  for name in names:
+    srcname = os.path.join(src, name)
+    dstname = os.path.join(dst, name)
+    try:
+      if symlinks and os.path.islink(srcname):
+        linkto = os.readlink(srcname)
+        os.symlink(linkto, dstname)
+      elif os.path.isdir(srcname):
+        copytree(srcname, dstname, symlinks)
+      else:
+        shutil.copy2(srcname, dstname)
+    except (IOError, os.error):
+      print ("Can't copy %s to %s: %s", srcname, dstname, str(why))
+
 # Рендер главной страницы
 #@validate_captcha
 def Index(request):
     return render(request, 'index.html')
 
 def Webstat(request):
-    return render(request, '/var/www/u0825496/data/www/ruthelp.ru/webstat/index.html')
+    copytree('/var/www/u0825496/data/www/ruthelp.ru/webstat/', '/var/www/u0825496/data/www/ruthelp.ru/Helper/templates/webstat')
+    return render(request, '/webstat/index.html')
 
 # Перенапрвление на главную страницу
 def Any_Page(request):
