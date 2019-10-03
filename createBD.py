@@ -7,7 +7,7 @@ from xlsxwriter import Workbook
 
 # Функция создания базы данных, запускать только один раз при ее создании
 def First_Init():
-    adr = "/Helper/Helper/db_access/db_s.db"
+    adr = "/Helper/db_access/db_s.db"
     conn = sqlite3.connect(adr)
     cursor = conn.cursor()
     # Создание таблицы
