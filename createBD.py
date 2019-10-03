@@ -8,7 +8,7 @@ from xlsxwriter import Workbook
 
 # Функция создания базы данных, запускать только один раз при ее создании
 def First_Init():
-    adr = "/Helper/db_access/db_s.db"
+    adr = "/var/www/u0825496/data/www/ruthelp.ru/Helper/Helper/db_access/db_s.db"
     conn = sqlite3.connect(adr)
     cursor = conn.cursor()
     # Создание таблицы
@@ -25,6 +25,4 @@ def First_Init():
     conn.close()
     return
 
-#First_Init()
-print ( Helper.settings.BASE_DIR )
-print ( Helper.settings.BASE_DIR +  "/Helper/db_access/db_s.db")
+First_Init()
