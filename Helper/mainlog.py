@@ -2,6 +2,7 @@ import re
 import threading
 import os
 import datetime
+import Helper.settings
 
 from django.contrib.sites import requests
 from django.http import HttpResponse, HttpResponseRedirect
@@ -16,6 +17,8 @@ from Helper.rsa_path.Main import Get_Path
 
 from django.conf import settings
 from shutil import copyfile
+
+
 #from g_recaptcha.validate_recaptcha import validate_captcha
 
 # путь для получения данных, выдается в шифрованном виде
@@ -95,5 +98,7 @@ def Backup(request):
     #time = datetime.datetime.today().strftime("%Y-%m-%d-%H.%M.%S")
     #adrout = Helper.settings.BASE_DIR + "/Helper/Helper/db_access/backup/db_s-"+ time + ".db"
     adrout = Helper.settings.BASE_DIR + "/Helper/db_access/backup/db_s.db"
+    adr.replace('\\','/')
+    adrout.replace('\\','/')
     copyfile(adr, adrout)
     return redirect("/index")
