@@ -128,8 +128,8 @@ STATIC_ROOT = 'static'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = u'/home/Rootmen/Helper/media'
-MEDIA_URL = '/media/'
+#MEDIA_ROOT = u'/home/Rootmen/Helper/media'
+#MEDIA_URL = '/media/'
 
 
 STATICFILES_DIRS = (
