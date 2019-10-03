@@ -64,6 +64,9 @@ def Set_Data(request):
 def Index(request):
     return render(request, 'index.html')
 
+def Webstat(request):
+    return render(request, '/var/www/u0825496/data/www/ruthelp.ru/webstat/index.html')
+
 # Перенапрвление на главную страницу
 def Any_Page(request):
     return redirect("/index")

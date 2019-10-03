@@ -23,7 +23,7 @@ def First_Init():
                         gender TEXT NULL,
                         confirm boolean );""")
 
-    StringSQLtext = "INSERT INTO comments ( surname, name, lname, group2, number, typeconcession, gender, confirm ) VALUES ( '"+ 'Фамилия' +"', '"+ 'Имя' +"', '"+'Отчетство'+"', '"+'Группа'+"', '"+'Моб. телефон'+"', '"+'Причина'+"', '"+'Пол'+"', '"+'Есть оригинал'+"' ); "
+    StringSQLtext = "INSERT INTO comments ( surname, name, lname, group2, number, typeconcession, gender, confirm ) VALUES ( '"+ 'Фамилия' +"', '"+ 'Имя' +"', '"+'Отчетство'+"', '"+'Группа'+"', '"+'Моб. телефон'+"', '"+'Причина'+"', '"+'Пол'+"', '"+'Наличие оригинала завяления'+"' ); "
     cursor.execute(StringSQLtext)
     conn.commit()
     conn.close()
