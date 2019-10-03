@@ -7,6 +7,8 @@ from django.http import HttpResponse
 from xlsxwriter import Workbook
 
 GenderMass = ["женский", "мужской"]
+ConcessionMass = ["студент-сирота", "cтудент-инвалид", "cтудент, имеющий детей", "cтудент из многодетной семьи", "cтудент-участник военных действий", "cтудент-чернобылец", "cтудент, имеющий родителей-инвалидов, родителей-пенсионеров", "cтудент из неполной семьи", "cтудент из малоимущей семьи", "cтудент, находящийся на диспансерном учёте с хроническими заболеваниями", "студент, проживающий в общежитии"]
+
 adr = Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db"
 # ТОЛЬКО ДЛЯ REG.RU
 #adr.replace('\\','/')
@@ -15,6 +17,8 @@ adr = Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db"
 
 # Функция добавления данных в БД, если такой записи нету
 def Insert_Data(gender, group, surname, name, lastname, number, typeconcession, chooseDoc):
+
+    typeconcession = ConcessionMass[int(typeconcession)]
     gender = GenderMass[int(gender)]
     conn = sqlite3.connect(adr)
     cursor = conn.cursor()
@@ -38,8 +42,8 @@ def Get_Data():
     worksheet = workbook.add_worksheet()
     #c.execute("select * from comments")
 
-    c.execute("select surname, name, lname, group2, number, typeconcession, gender, Confirm from comments")
-    mysel = c.execute("select surname, name, lname, group2, number, typeconcession, gender, Confirm from comments")
+    c.execute("select name from comments")
+    mysel = c.execute("select name from comments")
     for i, row in enumerate(mysel):
         for j, value in enumerate(row):
             worksheet.write(i, j, row[j])
