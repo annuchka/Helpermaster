@@ -1,8 +1,9 @@
 import mimetypes
 import os
 import sqlite3
-import Helper.settings
 
+
+from Helper import settings
 from django.http import HttpResponse
 from xlsxwriter import Workbook
 
