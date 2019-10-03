@@ -21,8 +21,7 @@ def First_Init():
                         number TEXT NULL,
                         typeconcession TEXT NOT NULL,
                         gender TEXT NULL,
-                        Confirm boolean,
-                        );""")
+                        Confirm boolean );""")
     conn.commit()
     conn.close()
     return
