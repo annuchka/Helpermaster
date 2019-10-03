@@ -28,7 +28,7 @@ SECRET_KEY = '1v6zfy59tbx08+x$cp-f!t2d#xr4+ema(0$k!5by%h^#(+*#df'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'remai.ddns.net', 'localhost', '127.0.0.1', '192.168.1.12']
+ALLOWED_HOSTS = ['localhost', '192.168.1.12', 'ruthelp.ru', 'www.ruthelp.ru']
 
 
 # Application definition
@@ -78,8 +78,11 @@ WSGI_APPLICATION = 'Helper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u0825496_default',
+        'USER': 'u0825496_default',
+        'PASSWORD': '_LP3HE_k',
+        'HOST': 'localhost',
     }
 }
 
@@ -121,13 +124,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 MEDIA_ROOT = u'/home/Rootmen/Helper/media'
 MEDIA_URL = '/media/'
-#STATIC_ROOT = u'/home/Rootmen/Helper/static'
-STATIC_URL = '/static/'
+
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
