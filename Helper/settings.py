@@ -128,15 +128,3 @@ STATIC_ROOT = BASE_DIR + '/static'
 
 TEMPLATES_ROOT = BASE_DIR + '/templates'
 TEMPLATES_URL = '/templates/'
-
-# default static files settings for PythonAnywhere.
-# see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-#MEDIA_ROOT = u'/home/Rootmen/Helper/media'
-#MEDIA_URL = '/media/'
-
-
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, "static"),
-#)
-#TEMPLATES_ROOT = u'/home/Rootmen/Helper/templates'
-#TEMPLATES_URL = '/templates/'
