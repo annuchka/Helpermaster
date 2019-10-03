@@ -36,8 +36,10 @@ def Get_Data():
     c = conn.cursor()
     workbook = Workbook('db_accel.xlsx')
     worksheet = workbook.add_worksheet()
-    c.execute("select * from comments")
-    mysel = c.execute("select * from comments ")
+    #c.execute("select * from comments")
+
+    c.execute("select surname, name, lname, group2, number, typeconcession, gender, Confirm from comments")
+    mysel = c.execute("select surname, name, lname, group2, number, typeconcession, gender, Confirm from comments")
     for i, row in enumerate(mysel):
         for j, value in enumerate(row):
             worksheet.write(i, j, row[j])
