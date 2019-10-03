@@ -20,7 +20,9 @@ def First_Init():
                         group2 TEXT NOT NULL,
                         number TEXT NULL,
                         typeconcession TEXT NOT NULL,
-                        gender TEXT NULL);""")
+                        gender TEXT NULL,
+                        Confirm boolean,
+                        );""")
     conn.commit()
     conn.close()
     return
