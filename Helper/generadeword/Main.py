@@ -55,7 +55,8 @@ def CreateWord(gender, group, surname, name, lastname, number, typeconcession, c
 
     if int(typeconcession) < 0 or int(typeconcession) > 10:
         return "Error typeConcession"
-    typeconcession = ConcessionMass[int(typeconcession)]
+
+    #typeconcession = ConcessionMass[int(typeconcession)]
 
     director = chooseDirector(group)
 
