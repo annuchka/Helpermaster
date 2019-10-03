@@ -11,7 +11,6 @@ GenderMass = ["женский", "мужской"]
 # Функция создания базы данных, запускать только один раз при ее создании
 def First_Init():
     conn = sqlite3.connect(Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db")
-    print(conn)
     cursor = conn.cursor()
     # Создание таблицы
     cursor.execute("""  CREATE TABLE comments (
@@ -31,7 +30,6 @@ def First_Init():
 def Insert_Data(gender, group, surname, name, lastname, number, typeconcession, chooseDoc):
     gender = GenderMass[int(gender)]
     conn = sqlite3.connect(Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db")
-    print(conn)
     cursor = conn.cursor()
     StringSQLtext = "SELECT * FROM comments WHERE surname = '"+surname+"' AND name = '"+name+"' AND lname = '"+lastname+"' AND group2 = '"+group+"' AND number = '"+number+"' AND typeconcession = '"+typeconcession+"' AND gender = '"+gender+"'"
     cursor.execute(StringSQLtext)
@@ -48,7 +46,6 @@ def Insert_Data(gender, group, surname, name, lastname, number, typeconcession, 
 # Функция генерации экселя по данным из БД
 def Get_Data():
     conn = sqlite3.connect(Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db")
-    print(conn)
     c = conn.cursor()
     workbook = Workbook('db_accel.xlsx')
     worksheet = workbook.add_worksheet()
