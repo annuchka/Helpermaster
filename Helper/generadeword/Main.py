@@ -5,8 +5,6 @@ from django.http import HttpResponse
 from docxtpl import DocxTemplate
 from Helper.change_word import *
 
-TemplateMass1 = ["очной", "заочной", "очно-заочной"]
-TemplateMass2 = ["очную", "заочную", "очно-заочную"]
 GenderMass = ["студенки", "студента"]
 ConcessionMass = ["студент-сирота", "cтудент-инвалид", "cтудент, имеющий детей", "cтудент из многодетной семьи", "cтудент-участник военных действий", "cтудент-чернобылец", "cтудент, имеющий родителей-инвалидов, родителей-пенсионеров", "cтудент из неполной семьи", "cтудент из малоимущей семьи", "cтудент, находящийся на диспансерном учёте с хроническими заболеваниями", "студент, проживающий в общежитии"]
 
@@ -67,7 +65,7 @@ def CreateWord(gender, group, surname, name, lastname, number, typeconcession, c
                'name': Genitive_Name(name, lastname),
                'lastname': Genitive_MiddleName(lastname),
                'number': number,
-               'typeconcession': typeconcession,
+               'typeconcession': ConcessionMass[int(typeconcession)],
                'director': director}
 
     doc.render(context)
