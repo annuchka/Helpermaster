@@ -1,5 +1,5 @@
-from Helper.mainlog import *
+import Helper.settings
 
-print(BASE_DIR)
-print(STATIC_URL)
-print(STATIC_ROOT)
+print(Helper.settings.BASE_DIR)
+print(Helper.settings.STATIC_URL)
+print(Helper.settings.STATIC_ROOT)
