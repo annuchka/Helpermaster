@@ -43,10 +43,10 @@ def Get_Data():
     #c.execute("select * from comments")
 
     #c.execute("select name from comments")
-    mysel = c.execute("select name from comments")
+    mysel = c.execute("select * from comments")
     for i, row in enumerate(mysel):
         for j, value in enumerate(row):
-            worksheet.write(i, j, row[j])
+            worksheet.write(i, j, row[j+1])
     workbook.close()
     conn.close()
     File_Path = os.path.abspath('db_accel.xlsx')
