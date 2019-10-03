@@ -89,7 +89,7 @@ def Page_Return_Data(request, path):
         return Data_Base()
     return redirect("/index")
 
-# Перенапрвление на gen
+# Бэкап
 def Backup(request):
     time = datetime.datetime.today().strftime("%Y-%m-%d-%H.%M.%S")
     copyfile(os.path.abspath("Helper/db_access/db_s.db"), os.path.abspath("Helper/db_access/backup/db_s-"+ time + ".db") )
