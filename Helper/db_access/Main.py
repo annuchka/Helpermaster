@@ -9,14 +9,11 @@ from xlsxwriter import Workbook
 GenderMass = ["женский", "мужской"]
 adr = Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db"
 # ТОЛЬКО ДЛЯ REG.RU
-adr.replace('\\','/')
+#adr.replace('\\','/')
 
 # Функция создания базы данных, запускать только один раз при ее создании
 def First_Init():
     conn = sqlite3.connect(adr)
-    # ТОЛЬКО ДЛЯ REG.RU
-    conn.replace('\\','/')
-
     cursor = conn.cursor()
     # Создание таблицы
     cursor.execute("""  CREATE TABLE comments (
@@ -52,9 +49,6 @@ def Insert_Data(gender, group, surname, name, lastname, number, typeconcession, 
 # Функция генерации экселя по данным из БД
 def Get_Data():
     conn = sqlite3.connect(adr)
-    # ТОЛЬКО ДЛЯ REG.RU
-    conn.replace('\\','/')
-
     c = conn.cursor()
     workbook = Workbook('db_accel.xlsx')
     worksheet = workbook.add_worksheet()
