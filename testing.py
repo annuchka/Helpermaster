@@ -2,4 +2,4 @@ import Helper.settings
 
 print(Helper.settings.BASE_DIR)
 print(Helper.settings.STATIC_ROOT)
-print(Helper.settings.TEMPLATES)
+print(Helper.settings.TEMPLATE_DIR)
