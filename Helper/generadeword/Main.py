@@ -43,10 +43,13 @@ def CreateWord(gender, group, surname, name, lastname, number, typeconcession, c
     # Задание параметров для шаблона и сохранение результата
     random.seed()
     if chooseDoc == '1':
-        doc = DocxTemplate("template1.docx")
+        #doc = DocxTemplate("template1.docx")
+        # ДЛЯ REG RU
+        doc = DocxTemplate("Helper/template1.docx")
     elif chooseDoc == '2':
-        doc = DocxTemplate("template2.docx")
-        #doc = DocxTemplate("BlankMatHelp.docx")
+        #doc = DocxTemplate("template2.docx")
+        # ДЛЯ REG RU
+        doc = DocxTemplate("Helper/template2.docx")
         typeconcession = 10
     else:
         print("chooseDoc error")

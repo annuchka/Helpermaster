@@ -23,7 +23,7 @@ TEMPLATES_URL = '/Helper/templates/'
 TEMPLATES_ROOT = BASE_DIR + '/templates'
 
 
-STATIC_URL = '/Helper/static'
+STATIC_URL = '/Helper/static/'
 STATIC_ROOT = BASE_DIR + '/static'
 
 # ТОЛЬКО ДЛЯ REG.RU
