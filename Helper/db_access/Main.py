@@ -2,13 +2,13 @@ import mimetypes
 import os
 import sqlite3
 
-
-import Helper.settings
 from django.http import HttpResponse
 from xlsxwriter import Workbook
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
 GenderMass = ["женский", "мужской"]
-adr = Helper.settings.BASE_DIR + "/Helper/db_access/db_s.db"
+adr = BASE_DIR + "/Helper/db_access/db_s.db"
 # ТОЛЬКО ДЛЯ REG.RU
 #adr.replace('\\','/')
 
