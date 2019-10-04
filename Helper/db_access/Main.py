@@ -40,6 +40,14 @@ def Get_Data():
     conn = sqlite3.connect(adr)
     c = conn.cursor()
     workbook = Workbook('db_accel.xlsx')
+
+    #count = len(ConcessionMass)
+
+
+    #for x in ConcessionMass:
+        #worksheet[i] = workbook.add_worksheet()
+
+
     worksheet = workbook.add_worksheet()
     #c.execute("select * from comments")
 
