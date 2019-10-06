@@ -100,6 +100,8 @@ def Genitive_Name(I, O):
       I = "Павла"
   elif I == "Лев":
       I = "Льва"
+  elif I == "Ольга":
+      I = "Ольги"    
 
   return I
 # Отчества
